@@ -2,6 +2,7 @@ var parentNode = document.getElementById("bg-offset");
 
 if (true) { //imgに背景画像を入れるテスト//
 	var bg = document.createElement("img");
+	bg.id = "background-image";
 	parentNode.appendChild(bg);
 	bg.src = "./stub/box.jpg";
 
@@ -12,18 +13,19 @@ if (true) { //imgに背景画像を入れるテスト//
 
 		if (screenRatio < imgRatio) {
 			//imgのほうが縦長//
-			bg.width = screenWidth;
-			bg.height = screenWidth * imgRatio;
+			bg.width = window.screenWidth;
+			bg.height = window.screenHeight;
 			var y = -(bg.height - screenHeight) / 2;
 			parentNode.style.position = "absolute";
 			parentNode.style.top = y + "px";
 		} else {
-			bg.height = screenHeight;
-			bg.width = screenHeight / imgRatio;
+			bg.height = window.screenHeight;
+			bg.width = window.screenWidth;
 			var x = -(bg.width - screenWidth) / 2;
 			parentNode.style.position = "absolute";
 			parentNode.style.left = x + "px";
 		}
+		bg.style.objectFit = "cover";
 	};
 } else { //カメラのプレビューを使うテスト//
 	var video = document.createElement("video");

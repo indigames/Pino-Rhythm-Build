@@ -29,14 +29,15 @@
 
 	<script src="Build/BeforeUnity.js"></script>
 	<script src="stub/stub.js"></script>
-	<script src="Build/PinoRhythm-WebGL.loader.js"></script>
+	<script src="Build/Pino-Rhythm-Build.loader.js"></script>
+	<script src="stub/custom.js"></script>
 
 	<script>
 		createUnityInstance(
 			document.querySelector("#unity-canvas"), {
-				dataUrl: "Build/PinoRhythm-WebGL.data",
-				frameworkUrl: "Build/PinoRhythm-WebGL.framework.js",
-				codeUrl: "Build/PinoRhythm-WebGL.wasm",
+				dataUrl: "Build/Pino-Rhythm-Build.data",
+				frameworkUrl: "Build/Pino-Rhythm-Build.framework.js",
+				codeUrl: "Build/Pino-Rhythm-Build.wasm",
 				streamingAssetsUrl: "StreamingAssets",
 				companyName: "DefaultCompany",
 				productName: "PinoRhythm",
@@ -90,7 +91,7 @@
 			canvas.style.height = window.innerHeight + 'px';
 
 			if (canvas.style.width < canvas.style.height) {
-				unityShowBanner('PLEASE rotate the screen again and refresh the	page.');
+				unityShowBanner('PLEASE rotate the screen for better play.');
 			} else {
 				unityShowBanner('Enjoy.');
 			}
