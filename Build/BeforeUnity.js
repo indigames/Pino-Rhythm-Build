@@ -41,11 +41,11 @@ function buSetCanvasPosition(){
 		//canvasのほうが縦長//
 		newW = screenWidth;
 		newH = screenWidth * canRatio;
-		newY = - (newH - screenHeight) / 2;
+		newY = 0;
 	}else{
 		newH = screenHeight;
 		newW = screenHeight / canRatio;
-		newX = - (newW - screenWidth) / 2;
+		newX = 0;
 	}
 	buSetStylePx(style, newX, newY, newW, newH);
 }
